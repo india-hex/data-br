@@ -1,0 +1,1473 @@
+{
+ "election": "br_ae2025",
+ "format": {
+  "version": 2,
+  "min_share": 0.002,
+  "endianness": "little",
+  "compression": "gzip per file",
+  "cells": "int32 row0, int32 col0, uint32 n; uint16[n] row-row0; uint16[n] col-col0; float32[n] electors with a polling location; uint16[n] kept share*65535",
+  "split": "uint32 m; m x (uint16 loc, uint32 count), loc ascending; zigzag-varint pixel-index deltas per location (first absolute); uint16 share*65535 per row; float32[m] exact location electors",
+  "geometry": "GHSL global grid, Mollweide sphere R=6378137: x = -18041000 + col*100 (west edge), y = 9000000 - row*100 (north edge), cell 100 m; inverse: th = asin(y/(sqrt2 R)), lat = asin((2th + sin 2th)/pi), lon = pi x / (2 sqrt2 R cos th)",
+  "loc": "booth-layer location index (tile field loc; catchment uid // 2)"
+ },
+ "acs": {
+  "1": {
+   "pixels": 15158,
+   "rows": 68392,
+   "locations": 203,
+   "bytes": 206783
+  },
+  "2": {
+   "pixels": 11924,
+   "rows": 53763,
+   "locations": 219,
+   "bytes": 165635
+  },
+  "3": {
+   "pixels": 8855,
+   "rows": 41664,
+   "locations": 195,
+   "bytes": 128428
+  },
+  "4": {
+   "pixels": 7970,
+   "rows": 62389,
+   "locations": 160,
+   "bytes": 157222
+  },
+  "5": {
+   "pixels": 9890,
+   "rows": 38990,
+   "locations": 153,
+   "bytes": 126258
+  },
+  "6": {
+   "pixels": 12228,
+   "rows": 45263,
+   "locations": 138,
+   "bytes": 144744
+  },
+  "7": {
+   "pixels": 11512,
+   "rows": 55803,
+   "locations": 151,
+   "bytes": 164644
+  },
+  "8": {
+   "pixels": 9081,
+   "rows": 51639,
+   "locations": 140,
+   "bytes": 144841
+  },
+  "9": {
+   "pixels": 8720,
+   "rows": 39144,
+   "locations": 164,
+   "bytes": 122135
+  },
+  "10": {
+   "pixels": 8176,
+   "rows": 33866,
+   "locations": 150,
+   "bytes": 109042
+  },
+  "11": {
+   "pixels": 9306,
+   "rows": 50810,
+   "locations": 175,
+   "bytes": 150019
+  },
+  "12": {
+   "pixels": 9131,
+   "rows": 46965,
+   "locations": 145,
+   "bytes": 140015
+  },
+  "13": {
+   "pixels": 13712,
+   "rows": 55508,
+   "locations": 155,
+   "bytes": 178206
+  },
+  "14": {
+   "pixels": 11628,
+   "rows": 60496,
+   "locations": 139,
+   "bytes": 173659
+  },
+  "15": {
+   "pixels": 11218,
+   "rows": 45878,
+   "locations": 136,
+   "bytes": 144558
+  },
+  "16": {
+   "pixels": 12738,
+   "rows": 71911,
+   "locations": 143,
+   "bytes": 201643
+  },
+  "17": {
+   "pixels": 15421,
+   "rows": 69713,
+   "locations": 178,
+   "bytes": 209924
+  },
+  "18": {
+   "pixels": 9457,
+   "rows": 53416,
+   "locations": 147,
+   "bytes": 153933
+  },
+  "19": {
+   "pixels": 9850,
+   "rows": 64000,
+   "locations": 152,
+   "bytes": 171097
+  },
+  "20": {
+   "pixels": 8441,
+   "rows": 40546,
+   "locations": 150,
+   "bytes": 125117
+  },
+  "21": {
+   "pixels": 8575,
+   "rows": 39987,
+   "locations": 157,
+   "bytes": 124572
+  },
+  "22": {
+   "pixels": 8679,
+   "rows": 45909,
+   "locations": 170,
+   "bytes": 137918
+  },
+  "23": {
+   "pixels": 7882,
+   "rows": 38147,
+   "locations": 168,
+   "bytes": 119068
+  },
+  "24": {
+   "pixels": 8601,
+   "rows": 47920,
+   "locations": 173,
+   "bytes": 139941
+  },
+  "25": {
+   "pixels": 7918,
+   "rows": 43341,
+   "locations": 171,
+   "bytes": 129118
+  },
+  "26": {
+   "pixels": 9146,
+   "rows": 54054,
+   "locations": 187,
+   "bytes": 156716
+  },
+  "27": {
+   "pixels": 10406,
+   "rows": 67078,
+   "locations": 217,
+   "bytes": 187370
+  },
+  "28": {
+   "pixels": 8070,
+   "rows": 60126,
+   "locations": 152,
+   "bytes": 159110
+  },
+  "29": {
+   "pixels": 9591,
+   "rows": 47739,
+   "locations": 170,
+   "bytes": 146656
+  },
+  "30": {
+   "pixels": 8663,
+   "rows": 43601,
+   "locations": 147,
+   "bytes": 131064
+  },
+  "31": {
+   "pixels": 9569,
+   "rows": 41588,
+   "locations": 168,
+   "bytes": 131765
+  },
+  "32": {
+   "pixels": 9434,
+   "rows": 45104,
+   "locations": 166,
+   "bytes": 140939
+  },
+  "33": {
+   "pixels": 9478,
+   "rows": 60851,
+   "locations": 179,
+   "bytes": 170936
+  },
+  "34": {
+   "pixels": 12613,
+   "rows": 59250,
+   "locations": 217,
+   "bytes": 179215
+  },
+  "35": {
+   "pixels": 9656,
+   "rows": 56003,
+   "locations": 194,
+   "bytes": 162394
+  },
+  "36": {
+   "pixels": 9746,
+   "rows": 66875,
+   "locations": 218,
+   "bytes": 183011
+  },
+  "37": {
+   "pixels": 10845,
+   "rows": 58505,
+   "locations": 192,
+   "bytes": 172634
+  },
+  "38": {
+   "pixels": 10246,
+   "rows": 57566,
+   "locations": 206,
+   "bytes": 168213
+  },
+  "39": {
+   "pixels": 11096,
+   "rows": 58814,
+   "locations": 221,
+   "bytes": 174065
+  },
+  "40": {
+   "pixels": 13373,
+   "rows": 58753,
+   "locations": 206,
+   "bytes": 183661
+  },
+  "41": {
+   "pixels": 15074,
+   "rows": 89339,
+   "locations": 214,
+   "bytes": 245515
+  },
+  "42": {
+   "pixels": 15684,
+   "rows": 58653,
+   "locations": 200,
+   "bytes": 193526
+  },
+  "43": {
+   "pixels": 11613,
+   "rows": 58828,
+   "locations": 193,
+   "bytes": 174561
+  },
+  "44": {
+   "pixels": 14902,
+   "rows": 60435,
+   "locations": 174,
+   "bytes": 191913
+  },
+  "45": {
+   "pixels": 17436,
+   "rows": 62499,
+   "locations": 186,
+   "bytes": 201072
+  },
+  "46": {
+   "pixels": 20029,
+   "rows": 86048,
+   "locations": 177,
+   "bytes": 253941
+  },
+  "47": {
+   "pixels": 14917,
+   "rows": 53089,
+   "locations": 183,
+   "bytes": 175783
+  },
+  "48": {
+   "pixels": 13798,
+   "rows": 68170,
+   "locations": 173,
+   "bytes": 195843
+  },
+  "49": {
+   "pixels": 12835,
+   "rows": 55535,
+   "locations": 152,
+   "bytes": 170084
+  },
+  "50": {
+   "pixels": 11890,
+   "rows": 65493,
+   "locations": 162,
+   "bytes": 186731
+  },
+  "51": {
+   "pixels": 15904,
+   "rows": 77901,
+   "locations": 188,
+   "bytes": 225427
+  },
+  "52": {
+   "pixels": 20230,
+   "rows": 78749,
+   "locations": 198,
+   "bytes": 245093
+  },
+  "53": {
+   "pixels": 22160,
+   "rows": 72070,
+   "locations": 178,
+   "bytes": 236341
+  },
+  "54": {
+   "pixels": 11622,
+   "rows": 34253,
+   "locations": 114,
+   "bytes": 117689
+  },
+  "55": {
+   "pixels": 14171,
+   "rows": 102975,
+   "locations": 165,
+   "bytes": 261082
+  },
+  "56": {
+   "pixels": 14077,
+   "rows": 78486,
+   "locations": 222,
+   "bytes": 225964
+  },
+  "57": {
+   "pixels": 12850,
+   "rows": 45561,
+   "locations": 159,
+   "bytes": 154844
+  },
+  "58": {
+   "pixels": 16880,
+   "rows": 63604,
+   "locations": 176,
+   "bytes": 208565
+  },
+  "59": {
+   "pixels": 12439,
+   "rows": 43201,
+   "locations": 189,
+   "bytes": 147423
+  },
+  "60": {
+   "pixels": 11045,
+   "rows": 36518,
+   "locations": 168,
+   "bytes": 128129
+  },
+  "61": {
+   "pixels": 15740,
+   "rows": 56168,
+   "locations": 189,
+   "bytes": 186732
+  },
+  "62": {
+   "pixels": 12299,
+   "rows": 90539,
+   "locations": 130,
+   "bytes": 231664
+  },
+  "63": {
+   "pixels": 7796,
+   "rows": 57176,
+   "locations": 141,
+   "bytes": 149129
+  },
+  "64": {
+   "pixels": 13402,
+   "rows": 53923,
+   "locations": 173,
+   "bytes": 172739
+  },
+  "65": {
+   "pixels": 15121,
+   "rows": 70097,
+   "locations": 220,
+   "bytes": 213225
+  },
+  "66": {
+   "pixels": 13889,
+   "rows": 62194,
+   "locations": 224,
+   "bytes": 194321
+  },
+  "67": {
+   "pixels": 11361,
+   "rows": 57337,
+   "locations": 192,
+   "bytes": 170657
+  },
+  "68": {
+   "pixels": 10868,
+   "rows": 68771,
+   "locations": 168,
+   "bytes": 191319
+  },
+  "69": {
+   "pixels": 14135,
+   "rows": 55955,
+   "locations": 168,
+   "bytes": 178983
+  },
+  "70": {
+   "pixels": 11234,
+   "rows": 52579,
+   "locations": 209,
+   "bytes": 166183
+  },
+  "71": {
+   "pixels": 12272,
+   "rows": 72958,
+   "locations": 186,
+   "bytes": 204838
+  },
+  "72": {
+   "pixels": 15298,
+   "rows": 78506,
+   "locations": 162,
+   "bytes": 226238
+  },
+  "73": {
+   "pixels": 16119,
+   "rows": 76210,
+   "locations": 203,
+   "bytes": 230712
+  },
+  "74": {
+   "pixels": 11174,
+   "rows": 54500,
+   "locations": 187,
+   "bytes": 165725
+  },
+  "75": {
+   "pixels": 12062,
+   "rows": 78001,
+   "locations": 194,
+   "bytes": 215134
+  },
+  "76": {
+   "pixels": 11802,
+   "rows": 61407,
+   "locations": 198,
+   "bytes": 183798
+  },
+  "77": {
+   "pixels": 11784,
+   "rows": 84210,
+   "locations": 181,
+   "bytes": 219668
+  },
+  "78": {
+   "pixels": 6708,
+   "rows": 35855,
+   "locations": 143,
+   "bytes": 106747
+  },
+  "79": {
+   "pixels": 7043,
+   "rows": 31294,
+   "locations": 140,
+   "bytes": 99624
+  },
+  "80": {
+   "pixels": 8763,
+   "rows": 53223,
+   "locations": 181,
+   "bytes": 152152
+  },
+  "81": {
+   "pixels": 8754,
+   "rows": 50368,
+   "locations": 161,
+   "bytes": 148002
+  },
+  "82": {
+   "pixels": 8982,
+   "rows": 64025,
+   "locations": 173,
+   "bytes": 175352
+  },
+  "83": {
+   "pixels": 4759,
+   "rows": 44166,
+   "locations": 114,
+   "bytes": 106888
+  },
+  "84": {
+   "pixels": 7536,
+   "rows": 37944,
+   "locations": 153,
+   "bytes": 116311
+  },
+  "85": {
+   "pixels": 8796,
+   "rows": 47196,
+   "locations": 194,
+   "bytes": 141297
+  },
+  "86": {
+   "pixels": 8213,
+   "rows": 48851,
+   "locations": 183,
+   "bytes": 142549
+  },
+  "87": {
+   "pixels": 9962,
+   "rows": 65757,
+   "locations": 184,
+   "bytes": 180362
+  },
+  "88": {
+   "pixels": 11725,
+   "rows": 63076,
+   "locations": 202,
+   "bytes": 183395
+  },
+  "89": {
+   "pixels": 9938,
+   "rows": 53779,
+   "locations": 205,
+   "bytes": 159254
+  },
+  "90": {
+   "pixels": 12784,
+   "rows": 63764,
+   "locations": 191,
+   "bytes": 188627
+  },
+  "91": {
+   "pixels": 12042,
+   "rows": 66408,
+   "locations": 159,
+   "bytes": 188019
+  },
+  "92": {
+   "pixels": 10623,
+   "rows": 82974,
+   "locations": 178,
+   "bytes": 215903
+  },
+  "93": {
+   "pixels": 12802,
+   "rows": 71868,
+   "locations": 189,
+   "bytes": 202445
+  },
+  "94": {
+   "pixels": 3133,
+   "rows": 73926,
+   "locations": 155,
+   "bytes": 151357
+  },
+  "95": {
+   "pixels": 13516,
+   "rows": 84275,
+   "locations": 202,
+   "bytes": 233280
+  },
+  "96": {
+   "pixels": 13322,
+   "rows": 68546,
+   "locations": 196,
+   "bytes": 197559
+  },
+  "97": {
+   "pixels": 14961,
+   "rows": 73688,
+   "locations": 213,
+   "bytes": 220187
+  },
+  "98": {
+   "pixels": 14214,
+   "rows": 77400,
+   "locations": 213,
+   "bytes": 221128
+  },
+  "99": {
+   "pixels": 13557,
+   "rows": 69831,
+   "locations": 199,
+   "bytes": 204240
+  },
+  "100": {
+   "pixels": 11759,
+   "rows": 76499,
+   "locations": 187,
+   "bytes": 210253
+  },
+  "101": {
+   "pixels": 11243,
+   "rows": 77949,
+   "locations": 199,
+   "bytes": 211233
+  },
+  "102": {
+   "pixels": 14188,
+   "rows": 84835,
+   "locations": 241,
+   "bytes": 242282
+  },
+  "103": {
+   "pixels": 14759,
+   "rows": 144365,
+   "locations": 288,
+   "bytes": 354337
+  },
+  "104": {
+   "pixels": 11878,
+   "rows": 71783,
+   "locations": 214,
+   "bytes": 204616
+  },
+  "105": {
+   "pixels": 7568,
+   "rows": 57273,
+   "locations": 161,
+   "bytes": 149804
+  },
+  "106": {
+   "pixels": 10821,
+   "rows": 65507,
+   "locations": 180,
+   "bytes": 186141
+  },
+  "107": {
+   "pixels": 10851,
+   "rows": 69718,
+   "locations": 210,
+   "bytes": 194531
+  },
+  "108": {
+   "pixels": 7874,
+   "rows": 44569,
+   "locations": 172,
+   "bytes": 130819
+  },
+  "109": {
+   "pixels": 11487,
+   "rows": 69596,
+   "locations": 208,
+   "bytes": 198474
+  },
+  "110": {
+   "pixels": 11835,
+   "rows": 77837,
+   "locations": 188,
+   "bytes": 210836
+  },
+  "111": {
+   "pixels": 14078,
+   "rows": 93570,
+   "locations": 206,
+   "bytes": 256278
+  },
+  "112": {
+   "pixels": 12404,
+   "rows": 94936,
+   "locations": 207,
+   "bytes": 246411
+  },
+  "113": {
+   "pixels": 9434,
+   "rows": 51963,
+   "locations": 179,
+   "bytes": 153003
+  },
+  "114": {
+   "pixels": 9481,
+   "rows": 53652,
+   "locations": 180,
+   "bytes": 155633
+  },
+  "115": {
+   "pixels": 13283,
+   "rows": 75472,
+   "locations": 199,
+   "bytes": 215522
+  },
+  "116": {
+   "pixels": 13123,
+   "rows": 70301,
+   "locations": 179,
+   "bytes": 202443
+  },
+  "117": {
+   "pixels": 10063,
+   "rows": 63963,
+   "locations": 166,
+   "bytes": 177855
+  },
+  "118": {
+   "pixels": 4759,
+   "rows": 56154,
+   "locations": 155,
+   "bytes": 135180
+  },
+  "119": {
+   "pixels": 9014,
+   "rows": 55638,
+   "locations": 175,
+   "bytes": 156461
+  },
+  "120": {
+   "pixels": 11249,
+   "rows": 71571,
+   "locations": 186,
+   "bytes": 200578
+  },
+  "121": {
+   "pixels": 9245,
+   "rows": 63664,
+   "locations": 179,
+   "bytes": 172145
+  },
+  "122": {
+   "pixels": 5845,
+   "rows": 94962,
+   "locations": 163,
+   "bytes": 200971
+  },
+  "123": {
+   "pixels": 9516,
+   "rows": 86694,
+   "locations": 163,
+   "bytes": 215655
+  },
+  "124": {
+   "pixels": 14234,
+   "rows": 98952,
+   "locations": 200,
+   "bytes": 265214
+  },
+  "125": {
+   "pixels": 15449,
+   "rows": 121162,
+   "locations": 218,
+   "bytes": 311932
+  },
+  "126": {
+   "pixels": 11509,
+   "rows": 72305,
+   "locations": 174,
+   "bytes": 197784
+  },
+  "127": {
+   "pixels": 8696,
+   "rows": 64584,
+   "locations": 156,
+   "bytes": 171345
+  },
+  "128": {
+   "pixels": 8863,
+   "rows": 67084,
+   "locations": 186,
+   "bytes": 178520
+  },
+  "129": {
+   "pixels": 7736,
+   "rows": 69118,
+   "locations": 172,
+   "bytes": 174060
+  },
+  "130": {
+   "pixels": 10914,
+   "rows": 63881,
+   "locations": 173,
+   "bytes": 177742
+  },
+  "131": {
+   "pixels": 12756,
+   "rows": 63058,
+   "locations": 209,
+   "bytes": 190512
+  },
+  "132": {
+   "pixels": 11806,
+   "rows": 109295,
+   "locations": 186,
+   "bytes": 266840
+  },
+  "133": {
+   "pixels": 8936,
+   "rows": 63561,
+   "locations": 155,
+   "bytes": 171694
+  },
+  "134": {
+   "pixels": 11059,
+   "rows": 86484,
+   "locations": 170,
+   "bytes": 219962
+  },
+  "135": {
+   "pixels": 9040,
+   "rows": 58797,
+   "locations": 171,
+   "bytes": 161233
+  },
+  "136": {
+   "pixels": 10577,
+   "rows": 63269,
+   "locations": 168,
+   "bytes": 178157
+  },
+  "137": {
+   "pixels": 7109,
+   "rows": 49436,
+   "locations": 159,
+   "bytes": 135845
+  },
+  "138": {
+   "pixels": 10309,
+   "rows": 58437,
+   "locations": 173,
+   "bytes": 167167
+  },
+  "139": {
+   "pixels": 8363,
+   "rows": 51783,
+   "locations": 209,
+   "bytes": 148935
+  },
+  "140": {
+   "pixels": 8229,
+   "rows": 47459,
+   "locations": 176,
+   "bytes": 140986
+  },
+  "141": {
+   "pixels": 8015,
+   "rows": 51056,
+   "locations": 165,
+   "bytes": 144495
+  },
+  "142": {
+   "pixels": 8850,
+   "rows": 68806,
+   "locations": 184,
+   "bytes": 182129
+  },
+  "143": {
+   "pixels": 6870,
+   "rows": 45249,
+   "locations": 132,
+   "bytes": 126683
+  },
+  "144": {
+   "pixels": 9402,
+   "rows": 57548,
+   "locations": 165,
+   "bytes": 164369
+  },
+  "145": {
+   "pixels": 5657,
+   "rows": 41773,
+   "locations": 138,
+   "bytes": 114411
+  },
+  "146": {
+   "pixels": 7116,
+   "rows": 56411,
+   "locations": 157,
+   "bytes": 149447
+  },
+  "147": {
+   "pixels": 7659,
+   "rows": 49174,
+   "locations": 164,
+   "bytes": 138430
+  },
+  "148": {
+   "pixels": 6794,
+   "rows": 36968,
+   "locations": 137,
+   "bytes": 109571
+  },
+  "149": {
+   "pixels": 6137,
+   "rows": 68072,
+   "locations": 137,
+   "bytes": 163210
+  },
+  "150": {
+   "pixels": 9385,
+   "rows": 59430,
+   "locations": 197,
+   "bytes": 167644
+  },
+  "151": {
+   "pixels": 5976,
+   "rows": 43734,
+   "locations": 177,
+   "bytes": 119717
+  },
+  "152": {
+   "pixels": 5015,
+   "rows": 30802,
+   "locations": 133,
+   "bytes": 89942
+  },
+  "153": {
+   "pixels": 6479,
+   "rows": 40976,
+   "locations": 143,
+   "bytes": 117799
+  },
+  "154": {
+   "pixels": 12934,
+   "rows": 56520,
+   "locations": 221,
+   "bytes": 177149
+  },
+  "155": {
+   "pixels": 8784,
+   "rows": 76356,
+   "locations": 256,
+   "bytes": 194192
+  },
+  "156": {
+   "pixels": 2106,
+   "rows": 38444,
+   "locations": 121,
+   "bytes": 85974
+  },
+  "157": {
+   "pixels": 7744,
+   "rows": 45214,
+   "locations": 210,
+   "bytes": 132440
+  },
+  "158": {
+   "pixels": 8247,
+   "rows": 77815,
+   "locations": 213,
+   "bytes": 197472
+  },
+  "159": {
+   "pixels": 8587,
+   "rows": 39745,
+   "locations": 212,
+   "bytes": 127266
+  },
+  "160": {
+   "pixels": 9443,
+   "rows": 58829,
+   "locations": 262,
+   "bytes": 167859
+  },
+  "161": {
+   "pixels": 10949,
+   "rows": 60591,
+   "locations": 208,
+   "bytes": 174625
+  },
+  "162": {
+   "pixels": 16593,
+   "rows": 50398,
+   "locations": 200,
+   "bytes": 173948
+  },
+  "163": {
+   "pixels": 19370,
+   "rows": 106153,
+   "locations": 226,
+   "bytes": 296567
+  },
+  "164": {
+   "pixels": 10303,
+   "rows": 51249,
+   "locations": 230,
+   "bytes": 156642
+  },
+  "165": {
+   "pixels": 5009,
+   "rows": 57708,
+   "locations": 171,
+   "bytes": 140045
+  },
+  "166": {
+   "pixels": 8495,
+   "rows": 64681,
+   "locations": 179,
+   "bytes": 171453
+  },
+  "167": {
+   "pixels": 9200,
+   "rows": 75736,
+   "locations": 233,
+   "bytes": 194563
+  },
+  "168": {
+   "pixels": 9579,
+   "rows": 62221,
+   "locations": 256,
+   "bytes": 172618
+  },
+  "169": {
+   "pixels": 6436,
+   "rows": 33055,
+   "locations": 187,
+   "bytes": 102291
+  },
+  "170": {
+   "pixels": 5805,
+   "rows": 31537,
+   "locations": 166,
+   "bytes": 96544
+  },
+  "171": {
+   "pixels": 6336,
+   "rows": 39917,
+   "locations": 207,
+   "bytes": 117080
+  },
+  "172": {
+   "pixels": 4567,
+   "rows": 53113,
+   "locations": 182,
+   "bytes": 126916
+  },
+  "173": {
+   "pixels": 8813,
+   "rows": 50172,
+   "locations": 216,
+   "bytes": 149126
+  },
+  "174": {
+   "pixels": 7821,
+   "rows": 42609,
+   "locations": 248,
+   "bytes": 130437
+  },
+  "175": {
+   "pixels": 7384,
+   "rows": 46106,
+   "locations": 260,
+   "bytes": 135873
+  },
+  "176": {
+   "pixels": 8595,
+   "rows": 54946,
+   "locations": 255,
+   "bytes": 159728
+  },
+  "177": {
+   "pixels": 7479,
+   "rows": 44051,
+   "locations": 271,
+   "bytes": 133482
+  },
+  "178": {
+   "pixels": 5762,
+   "rows": 41711,
+   "locations": 172,
+   "bytes": 115203
+  },
+  "179": {
+   "pixels": 5826,
+   "rows": 43549,
+   "locations": 177,
+   "bytes": 118802
+  },
+  "180": {
+   "pixels": 6210,
+   "rows": 48139,
+   "locations": 168,
+   "bytes": 129624
+  },
+  "181": {
+   "pixels": 3427,
+   "rows": 70914,
+   "locations": 160,
+   "bytes": 151811
+  },
+  "182": {
+   "pixels": 1340,
+   "rows": 41996,
+   "locations": 112,
+   "bytes": 84404
+  },
+  "183": {
+   "pixels": 2141,
+   "rows": 53072,
+   "locations": 119,
+   "bytes": 110385
+  },
+  "184": {
+   "pixels": 2104,
+   "rows": 58163,
+   "locations": 118,
+   "bytes": 118927
+  },
+  "185": {
+   "pixels": 7772,
+   "rows": 55751,
+   "locations": 199,
+   "bytes": 153865
+  },
+  "186": {
+   "pixels": 5407,
+   "rows": 79617,
+   "locations": 179,
+   "bytes": 180608
+  },
+  "187": {
+   "pixels": 8534,
+   "rows": 58430,
+   "locations": 202,
+   "bytes": 163158
+  },
+  "188": {
+   "pixels": 8133,
+   "rows": 62298,
+   "locations": 221,
+   "bytes": 168217
+  },
+  "189": {
+   "pixels": 9121,
+   "rows": 55727,
+   "locations": 280,
+   "bytes": 163442
+  },
+  "190": {
+   "pixels": 6990,
+   "rows": 37363,
+   "locations": 221,
+   "bytes": 114743
+  },
+  "191": {
+   "pixels": 9197,
+   "rows": 69454,
+   "locations": 269,
+   "bytes": 188439
+  },
+  "192": {
+   "pixels": 7959,
+   "rows": 43086,
+   "locations": 187,
+   "bytes": 130062
+  },
+  "193": {
+   "pixels": 7157,
+   "rows": 52954,
+   "locations": 193,
+   "bytes": 142324
+  },
+  "194": {
+   "pixels": 4735,
+   "rows": 57811,
+   "locations": 146,
+   "bytes": 134238
+  },
+  "195": {
+   "pixels": 6184,
+   "rows": 33331,
+   "locations": 195,
+   "bytes": 102755
+  },
+  "196": {
+   "pixels": 5829,
+   "rows": 46686,
+   "locations": 215,
+   "bytes": 122279
+  },
+  "197": {
+   "pixels": 8299,
+   "rows": 50153,
+   "locations": 232,
+   "bytes": 143587
+  },
+  "198": {
+   "pixels": 6675,
+   "rows": 37531,
+   "locations": 169,
+   "bytes": 110226
+  },
+  "199": {
+   "pixels": 9127,
+   "rows": 59081,
+   "locations": 189,
+   "bytes": 163921
+  },
+  "200": {
+   "pixels": 6534,
+   "rows": 43593,
+   "locations": 165,
+   "bytes": 120582
+  },
+  "201": {
+   "pixels": 7434,
+   "rows": 54946,
+   "locations": 195,
+   "bytes": 147879
+  },
+  "202": {
+   "pixels": 10562,
+   "rows": 54330,
+   "locations": 242,
+   "bytes": 162400
+  },
+  "203": {
+   "pixels": 11241,
+   "rows": 56572,
+   "locations": 206,
+   "bytes": 168371
+  },
+  "204": {
+   "pixels": 10154,
+   "rows": 41058,
+   "locations": 208,
+   "bytes": 134638
+  },
+  "205": {
+   "pixels": 9177,
+   "rows": 46238,
+   "locations": 194,
+   "bytes": 141312
+  },
+  "206": {
+   "pixels": 14135,
+   "rows": 80274,
+   "locations": 264,
+   "bytes": 230314
+  },
+  "207": {
+   "pixels": 10831,
+   "rows": 54737,
+   "locations": 240,
+   "bytes": 164998
+  },
+  "208": {
+   "pixels": 8340,
+   "rows": 78720,
+   "locations": 230,
+   "bytes": 194775
+  },
+  "209": {
+   "pixels": 9532,
+   "rows": 37134,
+   "locations": 265,
+   "bytes": 125964
+  },
+  "210": {
+   "pixels": 7613,
+   "rows": 34426,
+   "locations": 225,
+   "bytes": 109885
+  },
+  "211": {
+   "pixels": 6642,
+   "rows": 31749,
+   "locations": 204,
+   "bytes": 102320
+  },
+  "212": {
+   "pixels": 7562,
+   "rows": 51635,
+   "locations": 171,
+   "bytes": 143276
+  },
+  "213": {
+   "pixels": 7174,
+   "rows": 44527,
+   "locations": 246,
+   "bytes": 131286
+  },
+  "214": {
+   "pixels": 6277,
+   "rows": 45449,
+   "locations": 176,
+   "bytes": 122539
+  },
+  "215": {
+   "pixels": 6806,
+   "rows": 35451,
+   "locations": 201,
+   "bytes": 110780
+  },
+  "216": {
+   "pixels": 7550,
+   "rows": 52754,
+   "locations": 237,
+   "bytes": 148394
+  },
+  "217": {
+   "pixels": 8129,
+   "rows": 46141,
+   "locations": 221,
+   "bytes": 139295
+  },
+  "218": {
+   "pixels": 7927,
+   "rows": 58746,
+   "locations": 195,
+   "bytes": 157876
+  },
+  "219": {
+   "pixels": 9244,
+   "rows": 44276,
+   "locations": 219,
+   "bytes": 140822
+  },
+  "220": {
+   "pixels": 8459,
+   "rows": 40602,
+   "locations": 199,
+   "bytes": 125440
+  },
+  "221": {
+   "pixels": 15107,
+   "rows": 75615,
+   "locations": 226,
+   "bytes": 219399
+  },
+  "222": {
+   "pixels": 13558,
+   "rows": 71815,
+   "locations": 211,
+   "bytes": 208252
+  },
+  "223": {
+   "pixels": 11458,
+   "rows": 83302,
+   "locations": 209,
+   "bytes": 221866
+  },
+  "224": {
+   "pixels": 12370,
+   "rows": 62792,
+   "locations": 242,
+   "bytes": 187507
+  },
+  "225": {
+   "pixels": 9695,
+   "rows": 51178,
+   "locations": 273,
+   "bytes": 157463
+  },
+  "226": {
+   "pixels": 11989,
+   "rows": 73843,
+   "locations": 246,
+   "bytes": 210323
+  },
+  "227": {
+   "pixels": 16247,
+   "rows": 110091,
+   "locations": 269,
+   "bytes": 292922
+  },
+  "228": {
+   "pixels": 18788,
+   "rows": 99268,
+   "locations": 274,
+   "bytes": 290134
+  },
+  "229": {
+   "pixels": 15797,
+   "rows": 74108,
+   "locations": 267,
+   "bytes": 229530
+  },
+  "230": {
+   "pixels": 2916,
+   "rows": 54381,
+   "locations": 106,
+   "bytes": 115605
+  },
+  "231": {
+   "pixels": 9342,
+   "rows": 57926,
+   "locations": 282,
+   "bytes": 167710
+  },
+  "232": {
+   "pixels": 9493,
+   "rows": 55694,
+   "locations": 238,
+   "bytes": 163859
+  },
+  "233": {
+   "pixels": 11473,
+   "rows": 50934,
+   "locations": 274,
+   "bytes": 164964
+  },
+  "234": {
+   "pixels": 11942,
+   "rows": 64503,
+   "locations": 229,
+   "bytes": 190835
+  },
+  "235": {
+   "pixels": 12675,
+   "rows": 64790,
+   "locations": 221,
+   "bytes": 192857
+  },
+  "236": {
+   "pixels": 11047,
+   "rows": 66676,
+   "locations": 259,
+   "bytes": 194868
+  },
+  "237": {
+   "pixels": 8218,
+   "rows": 59348,
+   "locations": 204,
+   "bytes": 163233
+  },
+  "238": {
+   "pixels": 9594,
+   "rows": 52843,
+   "locations": 219,
+   "bytes": 159536
+  },
+  "239": {
+   "pixels": 8974,
+   "rows": 40457,
+   "locations": 226,
+   "bytes": 131367
+  },
+  "240": {
+   "pixels": 12036,
+   "rows": 53546,
+   "locations": 238,
+   "bytes": 169871
+  },
+  "241": {
+   "pixels": 11935,
+   "rows": 63833,
+   "locations": 221,
+   "bytes": 186865
+  },
+  "242": {
+   "pixels": 16557,
+   "rows": 93252,
+   "locations": 237,
+   "bytes": 265203
+  },
+  "243": {
+   "pixels": 20785,
+   "rows": 100894,
+   "locations": 258,
+   "bytes": 294208
+  }
+ }
+}
